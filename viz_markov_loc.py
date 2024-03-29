@@ -325,7 +325,7 @@ def probability(world):
 
     real_p = real[::-1]
     prediction_p = real[::-1]
-    Tk().wm_withdraw()  # прячем окно ткинтера
+    Tk().wm_withdraw()
     messagebox.showinfo('Результат ввода',
                         f'{real_p = } - синяя рамка\n' f'{prediction_p = } - жёлтая\n' f'{false_count = }')
 
@@ -348,7 +348,6 @@ def print_path(world, robot_position, U):
     if world[robot_position[0]][robot_position[1]] != 'w':
         path = find_path(robot_position, s, world)
     else:
-        print("nizya")
         return
     square_size = min(square_size_x, square_size_y)
     # Если путь найден, выведем его и обновим визуализацию
