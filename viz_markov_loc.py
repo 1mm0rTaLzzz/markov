@@ -166,7 +166,7 @@ def sense_color(p, Z, rows, cols, world):
     return p_new
 
 
-def sense_lidar(p, u, max_index, rows, cols, world):  # пока считаем, что лидар идеален
+def sense_lidar(p, u, max_index, rows, cols, world):  # считаем, что лидар идеален
     p_new = np.copy(p)
     flag = True
     wall_detect = (world[(u[0] + max_index[0]) % rows, (u[1] + max_index[1]) % cols] == 'w')
@@ -372,7 +372,7 @@ def print_path(world, robot_position, U):
 
     else:
         print("Путь не найден.")
-        Tk().wm_withdraw()  # прячем окно ткинтера
+        Tk().wm_withdraw()
         messagebox.showwarning('Внимание', 'Путь не найден')
 
 
@@ -507,13 +507,13 @@ while running:
 
                         fl += 1
                     else:
-                        Tk().wm_withdraw()  # прячем окно ткинтера
+                        Tk().wm_withdraw()
                         messagebox.showerror('Ошибка',
                                              'Координаты начала и конца должны быть целыми числами')
                     if fl == 2:
                         print_path(world, start_point, U)
                     else:
-                        Tk().wm_withdraw()  # прячем окно ткинтера
+                        Tk().wm_withdraw()
                         messagebox.showerror('Ошибка',
                                              'Пожалуйста, сначала запустите основную программу навигации')
 
